@@ -11,4 +11,4 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<img src="resume.png" style="width:95%">
+<iframe src="resume.pdf" width="100%" height="1000px">

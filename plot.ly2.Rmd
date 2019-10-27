@@ -1,0 +1,80 @@
+---
+title: "instacart example"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(ggridges)
+library(gridExtra)
+library(plotly)
+set.seed(1)
+data("instacart")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Number of items ordered in each aisle (For aisles with items ordered greater than 10000)
+
+```{r,warning=FALSE}
+
+insta = instacart %>% 
+  group_by(aisle) %>% 
+  count() %>% 
+  arrange(n) %>% 
+  filter(n>=10000) %>% 
+  plot_ly(
+    x = ~aisle, y = ~n, color = ~aisle,type = "bar") %>% 
+  layout(xaxis = list(title = "", tickangle = -45) )
+insta
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### The distribution of order main hour of the day for each day in the weekend for Pink Lady Apples
+
+```{r,warning=FALSE}
+pink = instacart %>% 
+  filter(product_name %in% "Pink Lady Apples") %>% 
+  mutate(order_dow=as.factor(order_dow)) %>% 
+  group_by(order_dow) %>% 
+  mutate(name = "Pink Lady Apples")%>% 
+  plot_ly(y = ~order_hour_of_day, x = ~order_dow, color=~order_dow, type = "box")
+pink
+```
+
+### Comparison between Coffee Ice Crean and Pink Lady Apples in mean order time for each day of the week
+
+```{r,warning=FALSE}
+
+pink_mean = instacart %>% 
+  filter(product_name %in% "Pink Lady Apples") %>% 
+  group_by(order_dow) %>% 
+  summarise(mean_hour = mean(order_hour_of_day) ) %>% 
+  mutate(name = "Pink Lady Apples")
+coffee_mean = instacart %>% 
+  filter(product_name %in% "Coffee Ice Cream") %>% 
+  group_by(order_dow) %>% 
+  summarise(mean_hour = mean(order_hour_of_day) )%>% 
+  mutate(name = "Coffee Ice Cream")
+com=full_join(pink_mean,coffee_mean) %>% 
+  mutate(order_dow=as.factor(order_dow)) %>% 
+  plot_ly(
+    x = ~order_dow, y = ~mean_hour, color=~name, type = "scatter", mode = "line",alpha = 0.5)
+com
+
+```
+
+```{r}
+rmarkdown::render("plot.ly2.Rmd", output_format = "flexdashboard::flex_dashboard")
+```
+
+
