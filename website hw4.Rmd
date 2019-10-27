@@ -27,7 +27,7 @@ Phone: 3367768715
 
 [Linkedin](https://www.linkedin.com/in/wurongyan-zhang-907405196/) 
 
-## Dashboard Example
+# Dashboard Example
 
 This is my [dashboard](plot.ly2.html)
 

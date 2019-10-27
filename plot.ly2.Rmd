@@ -73,8 +73,5 @@ com
 
 ```
 
-```{r}
-rmarkdown::render("plot.ly2.Rmd", output_format = "flexdashboard::flex_dashboard")
-```
 
 
