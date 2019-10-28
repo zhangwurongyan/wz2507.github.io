@@ -32,7 +32,7 @@ insta = instacart %>%
   filter(n>=10000) %>% 
   plot_ly(
     x = ~aisle, y = ~n, color = ~aisle,type = "bar") %>% 
-  layout(xaxis = list(title = "", tickangle = -45) )
+  layout(xaxis = list(title = "aisle name", yaxis= list(title="number of items ordered"), tickangle = -45) )
 insta
 ```
 
@@ -47,7 +47,7 @@ pink = instacart %>%
   mutate(order_dow=as.factor(order_dow)) %>% 
   group_by(order_dow) %>% 
   mutate(name = "Pink Lady Apples")%>% 
-  plot_ly(y = ~order_hour_of_day, x = ~order_dow, color=~order_dow, type = "box")
+  plot_ly(y = ~order_hour_of_day, x = ~order_dow, color=~order_dow, type = "box") %>% layout(xaxis= list(title="order day of week", yaxis="order hour of the day"))
 pink
 ```
 
@@ -68,7 +68,7 @@ coffee_mean = instacart %>%
 com=full_join(pink_mean,coffee_mean) %>% 
   mutate(order_dow=as.factor(order_dow)) %>% 
   plot_ly(
-    x = ~order_dow, y = ~mean_hour, color=~name, type = "scatter", mode = "line",alpha = 0.5)
+    x = ~order_dow, y = ~mean_hour, color=~name, type = "scatter", mode = "line",alpha = 0.5) %>% layout(xaxis= list(title="order day of week", yaxis="mean order hour of the day"))
 com
 
 ```
