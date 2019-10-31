@@ -4,7 +4,7 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: spacelab
 ---
 
 ```{r setup, include=FALSE}
@@ -13,24 +13,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Biostatistic MS Student | Columbia University Mailman School of Public Health
 
-<img src="image1.jpg" style="width:75%">
+<img src="image1.jpg" style="width:55%">
+<img src="img.gif" style="width:35%">
 
 # About
 
-I received a BA in mathematics from [Wake Forest University](https://www.wfu.edu) in 2019 and I am now in the MS program in Biostatistics in Columbia University. 
+I received a BA in mathematics from [Wake Forest University](https://www.wfu.edu) in 2019 and I am now in the MS program in Biostatistics at [Columbia University](https://www.columbia.edu). 
+
+You can learn more about me through [Linkedin](https://www.linkedin.com/in/wurongyan-zhang-907405196/) and here is my [resume](resume.html).
 
 # Contact Information
 Wurongyan Zhang
-100 Haven Avenue, New York, NY 10032
 
+100 Haven Avenue, New York, NY 10032
 
 Email: wz2507@cumc.columbia.edu
 
 Phone: +1 3367768715
 
-This is my [Linkedin](https://www.linkedin.com/in/wurongyan-zhang-907405196/).
-
-This is my [resume](resume.html).
 
 # Dashboard Example
 
