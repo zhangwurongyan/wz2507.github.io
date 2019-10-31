@@ -47,7 +47,7 @@ pink = instacart %>%
   mutate(order_dow=as.factor(order_dow)) %>% 
   group_by(order_dow) %>% 
   mutate(name = "Pink Lady Apples")%>% 
-  plot_ly(y = ~order_hour_of_day, x = ~order_dow, color=~order_dow, type = "box") %>% layout(xaxis= list(title="order day of week", yaxis=list(title="order hour of the day")))
+  plot_ly(y = ~order_hour_of_day, x = ~order_dow, color=~order_dow, type = "box") %>% layout(xaxis= list(title="order day of week"), yaxis=list(title="order hour of the day"))
 pink
 ```
 
