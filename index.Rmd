@@ -13,8 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Biostatistic MS Student | Columbia University Mailman School of Public Health
 
-<img src="image1.jpg" style="width:55%">
-<img src="img.gif" style="width:35%">
+<img src="WechatIMG74.jpeg" style="width:45%">
+<img src="WechatIMG73.jpeg" style="width:35%">
 
 # About
 
@@ -32,7 +32,6 @@ Email: wz2507@cumc.columbia.edu
 Phone: +1 3367768715
 
 
-# Dashboard Example
+# Previous Project
 
-This is my [dashboard](plot.ly2.html) example and I used the data [instacart](https://p8105.com/dataset_instacart.html).
-
+This is my previous data science [project](https://suicideproj.github.io/).
